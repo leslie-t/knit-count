@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		
+	<meta charset="UTF-8">
+	<meta name="description" content="Free Online Knitting Counter">
+	<meta name="keywords" content="Knitting Row Counter, Knitting Counter">
+	<meta name="author" content="Leslie Tsai">
+		 
+	<title>Knitting Counter</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+<header>
+	<h1>Knitting Row Counter</h1>
+	<h2>press any key to advance the counter.</h2>
+</header>
+
+<div class="counter">
+	<p class="increment">0</p>
+	<script type="text/javascript"> 
+		var p = document.querySelector('p')
+
+		document.addEventListener('keydown', increment, false);
+
+		function increment() {
+    		var number = parseInt(p.innerText);
+    		number++;
+    		p.innerText = number;
+		}
+	</script>
+</div>
+	
+</body>
+
+</html>
