@@ -2,7 +2,10 @@
 <html>
 
 <head>
-		
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,100' rel='stylesheet' type='text/css'>
+	
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
+	
 	<meta charset="UTF-8">
 	<meta name="description" content="Free Online Knitting Counter">
 	<meta name="keywords" content="Knitting Row Counter, Knitting Counter">
@@ -12,6 +15,7 @@
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+
 </head>
 
 <body>
@@ -19,22 +23,38 @@
 	<h1>Knitting Row Counter</h1>
 	<h2>press any key to advance the counter.</h2>
 </header>
+<h3> Rows Completed: </h3>
+<div id="counter">
+	<p class="number">0</p>
+<div>
 
-<div class="counter">
-	<p class="increment">0</p>
-	<script type="text/javascript"> 
-		var p = document.querySelector('p')
-
-		document.addEventListener('keydown', increment, false);
-
-		function increment() {
-    		var number = parseInt(p.innerText);
-    		number++;
-    		p.innerText = number;
-		}
-	</script>
+<div id="buttons">
+	<button type="button" id="decrease">-</button>
+	<button type="button" id="increase">+</button>
 </div>
-	
+
+<script type="text/javascript"> 
+	var p = document.querySelector('p')
+
+	document.addEventListener('keydown', increment, false);
+	document.getElementById("decrease").addEventListener('click', decrement)
+	document.getElementById("increase").addEventListener('click', increment)
+
+	function increment() {
+		var number = parseInt(p.innerText);
+		number++;
+		p.innerText = number;
+
+	}
+	function decrement() {
+		var number = parseInt(p.innerText);
+		if (number > 0) {
+			number = number - 1;
+		}
+		p.innerText = number;
+		}
+</script>
+
 </body>
 
 </html>
